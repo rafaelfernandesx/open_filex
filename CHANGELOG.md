@@ -1,3 +1,16 @@
+## 5.0.0
+* **BREAKING** Raise the minimum iOS deployment target from 8.0 to 13.0. Apps targeting an earlier
+  iOS version must bump `platform :ios, '13.0'` in their Podfile and the *iOS Deployment Target*
+  build setting before upgrading.
+* Add Swift Package Manager support for iOS. The plugin now ships a `Package.swift` alongside the
+  existing podspec, so both SPM and CocoaPods builds keep working (Thanks to [Eli Geller](https://github.com/elitree), PR[#28](https://github.com/javaherisaber/open_filex/pull/28), and [arahimli](https://github.com/arahimli), PR[#30](https://github.com/javaherisaber/open_filex/pull/30))
+* Migrate the example app's iOS runner to the UIScene lifecycle (`FlutterSceneDelegate` /
+  `FlutterImplicitEngineDelegate`), required by Xcode 27 and the iOS 27 SDK. The example now
+  requires Flutter 3.38 or later; the plugin itself is unaffected.
+* Commit the example's iOS and macOS `Podfile`s so `flutter build ios` / `flutter build macos`
+  work from a fresh clone (the auto-generated ones referenced a `RunnerTests` target that the
+  example project does not define).
+
 ## 4.7.0
 * Fix Android compatibility issues after Flutter 3.29.0 upgrade (Thanks to [mufassalhussain](https://github.com/mufassalhussain), PR[#19](https://github.com/javaherisaber/open_filex/pull/19))
 

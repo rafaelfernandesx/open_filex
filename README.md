@@ -17,6 +17,15 @@ This package is a fork of [open_file](https://pub.dev/packages/open_file) to fix
 
 For full list of changes see [CHANGELOG](https://pub.dev/packages/open_filex/changelog)
 
+## Requirements
+
+- **iOS 13.0 or later.** If your app still sets a lower deployment target, raise it in
+  `ios/Podfile` (`platform :ios, '13.0'`) and in Xcode under *Runner > Build Settings > iOS Deployment Target*.
+- The iOS plugin ships both a `Package.swift` and a podspec, so it works with
+  **Swift Package Manager** (Flutter 3.24+, once you enable it with
+  `flutter config --enable-swift-package-manager`) and with **CocoaPods**. No action is
+  needed either way.
+
 ## Usage
 
 To use this plugin, add [open_filex](https://pub.dev/packages/open_filex/install) as a dependency in your pubspec.yaml file.
