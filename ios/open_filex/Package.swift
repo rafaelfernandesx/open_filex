@@ -11,11 +11,15 @@ let package = Package(
     products: [
         .library(name: "open-filex", targets: ["open_filex"])
     ],
-    dependencies: [],
+    dependencies: [
+        .package(name: "FlutterFramework", path: "../FlutterFramework")
+    ],
     targets: [
         .target(
             name: "open_filex",
-            dependencies: [],
+            dependencies: [
+                .product(name: "FlutterFramework", package: "FlutterFramework")
+            ],
             cSettings: [
                 .headerSearchPath("include/open_filex")
             ]
